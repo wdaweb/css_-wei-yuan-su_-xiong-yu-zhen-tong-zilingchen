@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: 'Noto Sans TC', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 頭 */
+        .content {
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: black;
+            position: relative;
+            z-index: -5;
+        }
+
+        /* 鼻子白圈 */
+        .content::before {
+            content: '';
+            width: 280px;
+            height: 180px;
+            border-radius: 50%;
+            background: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* 嘴巴 */
+        .content::after {
+            content: '';
+            width: 170px;
+            height: 60px;
+            border-radius: 50%;
+            background: black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+        }
+
+        /* 左耳黑圈 */
+        .ear-left {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: black;
+            position: absolute;
+            left: 50px;
+        }
+
+        /* 左耳白圈 */
+        .ear-left::before {
+            content: '';
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        /* 右耳黑 */
+        .ear-right {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: black;
+            position: absolute;
+            right: 50px;
+        }
+
+        /* 右耳白圈 */
+        .ear-right::before {
+            content: '';
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        /* 左眼白圈 */
+        .eyes-left {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: white;
+            position: absolute;
+            left: 25%;
+            top: 20%
+        }
+
+        /* 左眼黑圈 */
+        .eyes-left::before {
+            content: '';
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        /* 右眼白圈 */
+        .eyes-right {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: white;
+            position: absolute;
+            right: 25%;
+            top: 20%
+        }
+
+        /* 右眼黑圈 */
+        .eyes-right::before {
+            content: '';
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        /* 右 */
+        .v {
+            width: 80px;
+            height: 90px;
+            background: white;
+            position: absolute;
+            bottom: 10%;
+            left: 58%;
+            transform: translate(-50%) skew(-50deg, 0deg)
+        }
+
+        /* 左 */
+        .v::after {
+            content: '';
+            width: 80px;
+            height: 90px;
+            background: white;
+            position: absolute;
+            right: 110px;
+            transform: skew(68deg, 0deg)
+        }
+
+        /* 左腮紅 */
+        .red {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: red;
+            position: absolute;
+            top: 50%;
+            transform: translate(-20%, -50%)
+        }
+
+        /* 右腮紅 */
+        .red::before {
+            content: '';
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: red;
+            position: absolute;
+            top: 50%;
+            left: 520px;
+            transform: translate(0%, -50%)
+        }
+
+        /* 鼻子 */
+        .red::after {
+            content: '';
+            width: 80px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            background: black;
+            left: 300px;
+            transform: translate(-10%)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="ear-left"></div>
+        <div class="ear-right"></div>
+        <div class="eyes-left"></div>
+        <div class="eyes-right"></div>
+        <div class="v"></div>
+        <div class="red"></div>
+    </div>
+</body>
+
+</html>

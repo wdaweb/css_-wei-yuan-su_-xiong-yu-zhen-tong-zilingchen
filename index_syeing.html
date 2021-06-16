@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: 'Noto Sans TC', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 活塞 */
+        .content {
+            height: 150px;
+            width: 66px;
+            background: black;
+            position: relative;
+
+        }
+
+        .e {
+            height: 150px;
+            width: 66px;
+            background: black;
+            position: relative;
+            z-index: 5;
+        }
+
+        /* 空筒 */
+        .c {
+            width: 297px;
+            height: 150px;
+            border: 1px solid #aaa;
+            background: linear-gradient(white, lightgray 65%, white 100%);
+            position: absolute;
+            left: -297px;
+        }
+
+        /* 藥劑 */
+        .c::before {
+            content: '';
+            height: 148px;
+            width: 297px;
+            background: linear-gradient(rgb(250, 250, 144), rgba(88, 87, 87, 0.4)65%, rgb(253, 253, 144) 100%);
+            border: 1px solid #aaa;
+            position: absolute;
+            top: -1px;
+            right: -366px;
+        }
+
+        /* 文字 */
+        .c::after {
+            content: 'Made in Taiwan';
+            font-size: 24px;
+            color: Grey;
+            position: absolute;
+            bottom: 0;
+        }
+
+        /* 推桿 */
+        .a {
+            height: 100px;
+            width: 70px;
+            border: 1px solid #aaa;
+            background: linear-gradient(white, lightgray 65%, white 100%);
+            position: absolute;
+            top: 25px;
+            left: -366px;
+        }
+
+        /* 活塞柄 */
+        .a::before {
+            content: '';
+            height: 150px;
+            width: 60px;
+            border: 1px solid #aaa;
+            background: linear-gradient(white, lightgray 65%, white 100%);
+            border-radius: 10%;
+            position: absolute;
+            top: -25px;
+            left: -62px;
+        }
+
+        /* 針座 */
+        .b {
+            height: 100px;
+            width: 70px;
+            border: 1px solid #aaa;
+            background: linear-gradient(white, lightgray 65%, white 100%);
+            border-radius: 0 10% 10% 0;
+            position: absolute;
+            right: -368px;
+            top: 25px;
+        }
+
+        /* 針 */
+        .b::before {
+            content: '';
+            width: 100px;
+            border: 1px solid grey;
+            position: absolute;
+            top: 50%;
+            right: -102px;
+            transform: translate(0 -50%);
+        }
+
+        .d {
+            height: 25px;
+            border: 1px solid #aaa;
+            position: absolute;
+            top: -25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="c"></div>
+        <div class="a"></div>
+        <div class="b"></div>
+        <div class="e"></div>
+        <!-- <div class="d"></div> -->
+
+    </div>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script>
+        const d = document.getElementsByClassName('d')
+        for (let i = 0; i <= 13; i++) {
+            $('.b').append(`<div class="d" style="left: -${i * 22 + 1}px;"></div>`)
+            $('.b').append(`<div class="d" style="left: -${(378) + (i - 1) * 22}px;"></div>`)
+        }
+    </script>
+</body>
+
+</html>
